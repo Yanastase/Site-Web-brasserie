@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="StyleEssai.css">
+    <style>
+        .message {
+            display: none; /* Masquer le message par défaut */
+            position: absolute; /* Permet de le placer n'importe où */
+            font-size: 24px;
+            color: white;
+        }
+    </style>
+  </head>
+  <body>
+        <ul class="menu">
+              <li>
+                <a href="index.html" class="actif">Accueil</a>
+              </li>
+              <li>
+                <a href="#">Produits</a>
+              </li>
+              <li>
+                <a href="#"></a>
+              </li>
+        <li>
+                <a href="#">Autres</a>
+              </li>
+       </ul>
+  <div class="message">Pour moi la bière c'est un moment de partage avec les copains après le sport. Aurelien M. Enseignant Lycée G. De Nerval Soissons</div>
+<div class="message">Pour moi la bière est un voyage au travers des arômes et des couleurs sous un nuage de mousse. Frank O. Enseignant Lycée G. De Nerval Soissons</div>
+<div class="message">Pour moi la bière c est faire entrer le soleil dans le cœur des amis et de la famille Philippe H  Secrétaire Lycée G. De Nerval Soissons</div>
+<div class="message">Pour moi la bière c est la convivialité entre amis Pascal H . Enseignant Lycée G. De Nerval Soissons</div>
+<div class="message">Pour moi la bière c est Le partage et la convivialité Jean-Francois V. Enseignant Lycée des Flandres Hazebrouck</div>
+<div class="message">Le rire est à l'homme ce que la pression est à la bière. Alphonse Allais</div>
+<div class="message">L'avoine fait le cheval, la bière le héros, et l'or le gentilhomme. Proverbe Tcheques</div>
+
+<script>
+    function getRandomPosition() {
+        const x = Math.random() * (window.innerWidth - 200); // 200 est une largeur approximative du message
+        const y = Math.random() * (window.innerHeight - 50); // 50 est une hauteur approximative du message
+        return { x, y };
+    }
+
+    function toggleMessage() {
+        const messages = document.querySelectorAll('.message');
+        const randomIndex = Math.floor(Math.random() * messages.length);
+        const message = messages[randomIndex];
+
+        const { x, y } = getRandomPosition();
+        message.style.left = `${x}px`;
+        message.style.top = `${y}px`;
+        message.style.display = 'block';
+
+        setTimeout(() => {
+            message.style.display = 'none';
+        }, 3000); // Masquer le message après 2 secondes
+    }
+
+    setInterval(toggleMessage, 3000); // Change toutes les 4 secondes
+</script>		 
+       
+       
+       
+    </body>
+</div>
